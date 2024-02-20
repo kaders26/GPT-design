@@ -1,0 +1,214 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 20%;
+  background-color: #f1f1f1;
+  color: #000000;
+  padding: 20px;
+}
+
+.side-bar button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #e2e2e2;
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.side-bar button:hover {
+  background-color: #d7d7d7;
+}
+
+.side-bar button i {
+  margin-right: 5px;
+}
+
+.history {
+  max-height: calc(90% - 40px);
+  overflow-y: auto;
+  padding: 10px;
+  text-align: left;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.exite {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.exite i {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #ff6347; /* Kırmızı arka plan rengi */
+  color: #ffffff; /* Beyaz metin rengi */
+  border: none; /* Kenarlık olmadan */
+  border-radius: 5px; /* Köşeleri yuvarlat */
+  padding: 5px 10px; /* İçerideki boşlukları ayarla */
+  cursor: pointer; /* İmleci el işaretine dönüştür */
+}
+
+.delete-btn:hover {
+  background-color: #dc143c; /* Butonun üzerine gelindiğinde arka plan rengini değiştir */
+}
+
+
+.profile {
+  border-radius: 50%;
+  padding: 5px;
+  margin: 8px;
+  background-color: #1b599b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  background-color: #eceaea;
+  color: #000000;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #cbcbcb;
+}
+
+.chatbox-wrapper {
+  margin-left: 20%;
+  width: 50%; 
+}
+
+.chat {
+  display: flex;
+  gap: 20px;
+  padding: 25px;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.chat img {
+  width: 35px;
+  height: 35px;
+}
+
+.response {
+  background-color: #ffffff;
+  border: 2px solid #eceaea;
+}
+
+.messagebar {
+  position: fixed;
+  bottom: 0;
+  height: 5rem;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ffffff;
+  background-color: #ffffff;
+}
+
+.messagebar .bar-wrapper {
+  background-color: #ffffff;
+  border: 2px solid  #b7b7b7;
+  border-radius: 10px;
+  width: 60vw;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+
+
+.bar-wrapper input {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: none;
+  color: #000000;
+}
+
+.bar-wrapper input::placeholder {
+  color: #7a7a7a;
+}
+
+.messagebar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #484848;
+  cursor: pointer;
+}
+
+.messagebar button:hover {
+  color: #000000;
+}
+
+.message-box {
+  height: calc(100vh - 5rem);
+  overflow-y: auto;
+}
+
+
+/* custom csrollbar */
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f7f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e2e2e2;
+  border-radius: 5px;
+}
