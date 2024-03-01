@@ -161,8 +161,6 @@ body {
   justify-content: center; 
 }
 
-
-
 .bar-wrapper input {
   width: 100%;
   padding: 5px;
@@ -197,7 +195,7 @@ body {
 }
 
 
-/* custom csrollbar */
+/* custom scrollbar */
 
 
 ::-webkit-scrollbar {

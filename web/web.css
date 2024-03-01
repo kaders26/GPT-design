@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kode Mono", monospace;
+}
+
+body {
+  background-color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 60px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  padding: 10px;
+  margin: 15px;
+  color: white;
+}
+
+.navbar ul {
+  margin-left: auto; /* Değiştirildi */
+  display: flex;
+  list-style-type: none;
+}
+
+.navbar ul li {
+  margin: 10px;
+  font-size: 16px; /* Değiştirildi */
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+
+.navbar ul li a::before {
+  content: attr(data-text);
+  position: absolute;
+  color: white;
+  width: 0;
+  overflow: hidden;
+  transition: 0.4s;
+  border-bottom: 5px solid white;
+}
+
+.navbar ul li a:hover::before {
+  width: 100%;
+  filter: drop-shadow(0 0 25px white);
+}
+
+.back-video {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.animated-text {
+  padding: 40px;
+  margin: 10px;
+  text-align: center;
+  color: white;
+  font-size: 24px; /* Değiştirildi */
+}
+
+.animated-text span {
+  position: relative;
+  color: rgb(0, 0, 0);
+  background-color: #eaeaea;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.btn a {
+  position: relative;
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 7px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+.btn a:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transition: transform 0.5s ease;
+  transform: scaleY(0);
+  transform-origin: left;
+}
+
+.btn a:hover::before {
+  transform: scaleY(1);
+  transform-origin: right;
+}
+
+.page-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15em;
+}
+
+.txt {
+  color: white;
+  top: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.page-btn a {
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px;
+  margin: 30px 0;
+  border-radius: 10px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.page-btn a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eaeaea;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bababa;
+  border-radius: 5px;
+}
+
+.page-2 {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #000000; 
+  padding: 50px;
+  width: 60em;
+  height: 35em;
+  margin: 110px auto; /* Değiştirildi */
+  border-radius: 35px;
+  border: 2px solid rgb(184, 184, 184);
+  transition: transform 0.5s ease; /* Animasyon eklendi */
+  transform: translateY(0); /* Başlangıç konumu */
+}
+
+.exp-chat {
+  background-color: white;
+  display: inline-block; 
+  position: relative; 
+  width: 50%;
+  height: 27em;
+  border: 4px solid rgb(207, 207, 207);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.text-2 {
+  color: white;
+  text-align: start;
+  font-size: 15px;
+  width: 40%;
+  height: 70%;
+  padding: 5px;
+}
+
+.exp-chat input[type="text"] {
+  position: absolute;
+  border-radius: 8px;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 80px); 
+  padding: 10px;
+  margin: 10px;
+}
+
+.exp-chat button {
+  position: absolute;
+  border-radius: 8px;
+  bottom: 0px;
+  right: 0;
+  padding: 10px;
+  margin: 10px 8px;
+  width: 50px; /* veya istediğiniz genişlik */
+}
