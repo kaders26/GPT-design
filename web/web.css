@@ -186,11 +186,11 @@ h1 {
   padding: 50px;
   width: 60em;
   height: 35em;
-  margin: 110px auto; /* Değiştirildi */
+  margin: 110px auto; 
   border-radius: 35px;
   border: 2px solid rgb(184, 184, 184);
-  transition: transform 0.5s ease; /* Animasyon eklendi */
-  transform: translateY(0); /* Başlangıç konumu */
+  transition: transform 0.5s ease; 
+  transform: translateY(0); 
 }
 
 .exp-chat {
@@ -230,5 +230,5 @@ h1 {
   right: 0;
   padding: 10px;
   margin: 10px 8px;
-  width: 50px; /* veya istediğiniz genişlik */
+  width: 50px; 
 }
