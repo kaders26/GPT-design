@@ -10,15 +10,22 @@ body {
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 60px;
+  width: 100%;
+  height: 70px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #c8c8c8;
+  background-color: rgba(0, 0, 0, 0.89);
+  z-index: 10000;
+}
+
+.navbar.scrolled{
+  background-color: #eaeaea;
 }
 
 h1 {
@@ -28,14 +35,13 @@ h1 {
 }
 
 .navbar ul {
-  margin-left: auto; /* Değiştirildi */
   display: flex;
   list-style-type: none;
 }
 
 .navbar ul li {
   margin: 10px;
-  font-size: 16px; /* Değiştirildi */
+  font-size: 16px;
 }
 
 .navbar ul li a {
@@ -70,18 +76,23 @@ h1 {
   z-index: -1;
 }
 
+.page-1{
+  height: 60vh;
+}
+
 .animated-text {
   padding: 40px;
   margin: 10px;
   text-align: center;
   color: white;
-  font-size: 24px; /* Değiştirildi */
+  font-size: 24px;
 }
 
 .animated-text span {
   position: relative;
   color: rgb(0, 0, 0);
   background-color: #eaeaea;
+  text-transform: uppercase;
 }
 
 .btn {
@@ -176,21 +187,58 @@ h1 {
   background: #bababa;
   border-radius: 5px;
 }
+.body-2 {
+  height: 100vh;
+  width: 100%;
+}
 
 .page-2 {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 0.9s ease;
   display: flex;
-  position: relative;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  background-color: #000000; 
-  padding: 50px;
-  width: 60em;
-  height: 35em;
-  margin: 110px auto; 
+  background-color: #0e0e0e; 
+  width: 60%;
+  height: 80%;
+  margin-top: 100px;
   border-radius: 35px;
-  border: 2px solid rgb(184, 184, 184);
-  transition: transform 0.5s ease; 
-  transform: translateY(0); 
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+.page-2::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 180%;
+  background: linear-gradient(white, white);
+  animation: rotate 4s linear infinite;
+}
+
+.page-2::after {
+  content: '';
+  position: absolute;
+  background-color: #1e1e1e;
+  inset: 5px;
+  border-radius: 30px;
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.page-2.active {
+  opacity: 1;
 }
 
 .exp-chat {
@@ -202,15 +250,19 @@ h1 {
   border: 4px solid rgb(207, 207, 207);
   border-radius: 10px;
   padding: 15px;
+  z-index: 2;
 }
 
 .text-2 {
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: start;
-  font-size: 15px;
+  font-size: 18px;
   width: 40%;
   height: 70%;
-  padding: 5px;
+  background-color: #454545;
+  padding: 15px;
+  margin: 10px;
+  z-index: 2;
 }
 
 .exp-chat input[type="text"] {
@@ -231,4 +283,13 @@ h1 {
   padding: 10px;
   margin: 10px 8px;
   width: 50px; 
+}
+
+.baslik{
+  display: flex;
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
 }

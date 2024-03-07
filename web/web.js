@@ -8,44 +8,58 @@ document.addEventListener('DOMContentLoaded', function(event) {
     var chatMessages = document.querySelectorAll('.exp-chat span');
   
     chatMessages.forEach(function(message) {
+        // Mesaj içeriğini al
         var text = message.innerHTML;
         message.innerHTML = '';
-  
-        function typeWriter(text) {
-            var fullText = '';
-            var i = 0;
-            var interval = setInterval(function() {
-                fullText += text.charAt(i);
-                message.innerHTML = fullText;
-                i++;
-                if (i >= text.length) {
-                    clearInterval(interval);
-                    message.style.animation = 'none';
-                }
-            }, 30); 
+
+        // Mesajın daha önce gösterilip gösterilmediğini kontrol etmek için bir sınıf tanımla
+        var animationClass = 'shown';
+
+        // Eğer mesaj daha önce gösterilmediyse animasyonu başlat
+        if (!message.classList.contains(animationClass)) {
+            // Yazıyı yazdıran fonksiyon
+            function typeWriter(text) {
+                var fullText = '';
+                var i = 0;
+                var interval = setInterval(function() {
+                    fullText += text.charAt(i);
+                    message.innerHTML = fullText;
+                    i++;
+                    if (i >= text.length) {
+                        clearInterval(interval);
+                        // Animasyonu kaldır ve mesajın daha önce gösterildiğini işaretle
+                        message.classList.add(animationClass);
+                    }
+                }, 30);
+            }
+
+            typeWriter(text);
         }
-  
-        typeWriter(text);
+    });
+});
+window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollY;
+    var page1 = document.querySelector('.page-1');
+    var page2 = document.querySelector('.page-2');
+    var page1Height = page1.clientHeight;
+    
+    if (scrollPosition > page1Height) {
+        page2.classList.add('active');
+    } else {
+        page2.classList.remove('active');
+    }
+});
+
+
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) { // Eğer sayfa scroll edilirse
+            $('#navbar').addClass('scrolled');
+        } else {
+            $('#navbar').removeClass('scrolled');
+        }
     });
 });
 
-// Sayfa-2'nin scroll olayını dinleyerek sınıf eklemesi
-window.addEventListener('scroll', function() {
-    var scrollPosition = window.scrollY;
-    var page2 = document.querySelector('.page-2');
-
-    if (scrollPosition > 0) {
-        page2.classList.add('scrolled');
-    } else {
-        page2.classList.remove('scrolled');
-    }
-});
-
-// Sayfa-1'in scroll olayını dinlemeden sadece sayfa-2'yi kontrol etmek
-var page2 = document.querySelector('.page-2');
-page2.addEventListener('wheel', function(e) {
-    // Yukarı scroll yapılıyorsa scrolled sınıfını ekleyerek yukarı kaydır
-    if (e.deltaY < 0) {
-        page2.classList.add('scrolled');
-    }
-});
+  
+  
